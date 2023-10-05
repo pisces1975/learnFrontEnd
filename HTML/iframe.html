@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+    #myframe{
+        border: 1px solid #ddd;
+        background-color: #f6f6f6;
+    }
+</style>
+<head>
+<meta charset="utf-8">
+<title>HTML &lt;iframe&gt; 标签演示</title>
+ <base href="http://c.biancheng.net/">
+</head>
+<body>
+<ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="html/index.html">HTML教程</a></li>
+    </ul>
+    <p>下面的内联框架将嵌入C语言中文网首页，宽度设置为 330 像素，高度设置为 280 像素，用以模拟手机端的显示效果。</p>
+    <iframe src="http://c.biancheng.net/" width="330" height="280"></iframe>
+	<p><a href="http://c.biancheng.net/" target="myframe">猛击这里查看C语言中文网在手机端的显示效果</a></p>
+    <iframe id="myframe" name="myframe" width="330" height="280"></iframe>
+	 <p>在 HTML 内联框架中嵌入C语言中文网 Logo。</p>
+    <iframe src="./logo.png" width="300" height="73" scrolling="no" style="border:1px solid #ddd;">
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<script>
+    // alert("顶部脚本");
+</script>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第一个JavaScript程序</title>
+	
+    <script type="text/javascript">
+        var str = "<h2 style=\"color:blue\">C语言中文网：c.biancheng.net</h2>";
+		document.write(str);
+		d = new Date();  //获取当前日期和时间
+		document.write(d.toString());  // 显示日期
+		const PI = 3.1415       // 声明一个常量 PI，并赋值为 3.1415
+		console.log(PI)         // 在控制台打印 PI
+		let age  = 11;          // 声明一个变量 age
+		//let age  = 13;          // 报错：变量 age 不能重复定义
+    </script>
+	<script type="text/javascript" src="test.js"></script>
+</head>
+<body>
+<h1 style='color:red'>Webpage title</h1>
+    <script>
+        // alert("页面脚本");
+		var a;  // 此时 a 为 Undefined
+		a = "http://c.biancheng.net/"; // 此时 a 为 String 类型
+		console.log("type of a is: " + typeof(a))
+		a = 123;  // 此时 a 为 Number 类型
+		console.log("type of a again is: " + typeof(a))
+		
+		var num;
+		console.log("num is: " + num);  // 输出 undefined
+		var message;
+		console.log("type of message is: " + typeof message);  // 输出 undefined
+		console.log("type of name is: " + typeof name);     // 输出 String
+		console.log("content of name is: " + name); //output is blank
+		
+		var str = "123";
+		var sym1 = Symbol(str);
+		var sym2 = Symbol(str);
+		console.log('sym1 is: ' + sym1.toString());          // 输出 Symbol(123)
+		console.log('sym2 is: ' + sym2.toString());          // 输出 Symbol(123)
+		console.log('the same: ' + (sym1 == sym2));  // 输出 false ：虽然 sym1 与 sym2 看起来是相同的，但实际上它们并不一样，根据 Symbol 类型的特点，sym1 和 sym2 都是独一无二的
+		var person = {
+			name: 'Bob',
+			age: 20,
+			tags: ['js', 'web', 'mobile'],
+			city: 'Beijing',
+			hasCar: true,
+			zipcode: null
+		};
+		console.log('name: ' + person.name);       // 输出 Bob
+		console.log('age: ' + person.age);        // 输出 20
+		console.log('tags: ' + person.tags);        // 输出 20
+		console.log('hasCar: ' + person.hasCar);        // 输出 20
+		console.log('zipcode: ' + person.zipcode);        // 输出 20
+		
+		
+		var arr = [1, 2, 3.14, 'Hello', null, true];	
+		document.write("<ul>")
+		for(var i=0; i<arr.length; i++) {
+			document.write("<li style=\"color:green\">item " + i + " is: " + arr[i] + "</li>");
+		}
+		document.write("</ul>")
+		
+		function sayHello(name){
+			return "Hello, " + name;
+		}
+		var res = sayHello("Peter");
+		console.log(res);  // 输出 Hello, Peter
+
+    </script>
+    <p id='day'>正文内容</p>
+	
+	<script>
+		var fun = function(){
+			console.log("http://c.biancheng.net/js/");
+		}
+		
+		function createGreeting(name){
+			return "Hello, " + name;
+		}
+		function displayGreeting(greetingFunction, userName){
+			return greetingFunction(userName);
+		}
+		
+		var result = displayGreeting(createGreeting, "Jason");
+		console.log(result);  // 输出 Hello, Peter
+		fun()
+		
+		var x = 25;
+		var y = 35;
+		var z = "25";
+
+		console.log('x==z is: ' + x == z);  // 输出： false
+		console.log("x===z is: " + x === z); // 输出： false
+		
+		var a = 5 & 1,
+			b = 5 | 1,
+			c = 5 ^ 1,
+			d = ~ 5,
+			e = 5 << 1,
+			f = 5 >> 1,
+			g = 5 >>> 1;
+		console.log('a = 5 & 1 = ' + a);  // 输出：1
+		console.log('b = 5 | 1 =  ' + b);  // 输出：5
+		console.log('c = 5 ^ 1 = ' + c);  // 输出：4
+		console.log('d = ~ 5 = ' + d);  // 输出：-6
+		console.log('e = 5 << 1 = ' + e);  // 输出：10
+		console.log('f = 5 >> 1 = ' + f);  // 输出：2
+		console.log('g = 5 >>> 1 = ' + g);  // 输出：2
+	</script>
+	
+	<div id="demo">JavaScript 输出</div>
+    <script type="text/javascript">
+        var demo = document.getElementById("demo");
+        console.log(demo.innerHTML);
+        demo.innerHTML = "<h2>innerHTML</h2>"
+    </script>
+	
+	<script type="text/javascript">
+        var now = new Date();           // 获取当前的完整日期
+        var dayOfWeek = now.getDay();   // 获取一个 0-6 之间的数字，用来表示当前是星期几，0 表示星期日、1 表示星期一、以此类推
+		var ele = document.getElementById('day');
+        if(dayOfWeek == 0) {            // 判断当前是星期几
+            ele.innerHTML = "星期日";
+        } else if(dayOfWeek == 1) {
+            ele.innerHTML = "星期一";
+        } else if(dayOfWeek == 2) {
+            ele.innerHTML = "星期二";
+        } else if(dayOfWeek == 3) {
+            ele.innerHTML = "星期三";
+        } else if(dayOfWeek == 4) {
+            ele.innerHTML = "星期四";
+        } else if(dayOfWeek == 5) {
+            ele.innerHTML = "星期五";
+        } else {
+            ele.innerHTML = "星期六";
+        }
+    </script>
+	
+	<div style='color:brown'>
+		<p>闰年列表</p>
+		<script>
+			var i = 1900;
+			var count = 0; //计数闰年的个数
+			while (i <= 2020) {
+				//判断是否是闰年
+				if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0) {
+					document.write(i + "&nbsp;&nbsp;");
+					count++;
+					if (count % 6 == 0) {
+						document.write("<br/>");
+					}
+				}
+				i++;
+			}
+		</script>
+		<p>乘法口诀</p>
+		<script>
+			for (var i = 1; i <= 4; i++) {
+				for (var j = 1; j <= i; j++) {
+					document.write(j + " x " + i + " = " + (i * j) + "&emsp;");
+				}
+			
+				document.write("<br>");
+			}
+		</script>
+		
+		<script>
+			var person = {"name": "Clark", "surname": "Kent", "age": "36"};
+
+			// 遍历对象中的所有属性
+			for(var prop in person) {
+				document.write("<p>" + prop + " = " + person[prop] + "</p>");
+			}
+			
+			// 定义一个字符串
+			var str = "Hello World!";
+			// 使用 for of 循环遍历字符串中的每个字符
+			for (var value of str) {
+				document.write(value + ", ");
+			}
+			document.write("<br>")
+			
+			document.write("开始循环!<br /> ");
+			outerloop:          // 定义一个标签    
+			for (var i = 0; i < 5; i++) {
+			   document.write("外层循环: " + i + "<br />");
+			   innerloop:       // 定义一个标签
+			   for (var j = 0; j < 5; j++) {
+				  if (j > 3 ) break ;           // 跳出内层循环
+				  if (i == 2) break innerloop;  // 跳出内层讯息
+				  if (i == 4) break outerloop;  // 跳出外层循环
+				  document.write("&nbsp;&nbsp;&nbsp;&nbsp;内层循环: " + j + " <br />");
+			   }
+			}      
+			document.write("循环结束!<br /> ");
+		</script>
+	</div>
+	
+</body>
+<script type="text/javascript">
+    
+        var res = window.confirm("这里是要显示的内容");
+        if(res == true){
+            console.log("你点击了“确定”按钮");
+        }else{
+            console.log("你点击了“取消”按钮");
+        }
+    
+</script>
+</html>

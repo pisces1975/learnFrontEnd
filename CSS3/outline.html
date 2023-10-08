@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        span {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            /* float: left; */
+            text-align: center;
+            line-height: 100px;
+            /*为了能更直观的看出轮廓的效果，这里提前设置了轮廓的宽度和颜色*/
+            outline-width: 8px;
+            outline-color: #AAAAAA;
+        }
+        .dotted {
+            outline-style: dotted;
+			outline-width: 5px;
+        }
+        .dashed {
+            outline-style: dashed;
+			outline-width: thin;
+        }
+        .solid {
+            outline-style: solid;
+			outline-width: thick;
+        }
+        .double {
+            outline-style: double;
+        }
+        .groove {
+            outline-style: groove;
+        }
+        .ridge {
+            outline-style: ridge;
+        }
+        .inset {
+            outline-style: inset;
+        }
+        .outset {
+            outline-style: outset;
+        }
+		body {
+            background-color: #CCC;
+        }
+        p.one {
+            outline-style: solid;
+            outline-width: 5px;
+            outline-color: red;
+        }
+        p.two {
+            outline-style: groove;
+            outline-width: 6px;
+            outline-color: #AAA;
+        }
+        p.three {
+            outline-style: inset;
+            outline-width: 5px;
+            outline-color: rgb(217, 0, 217);
+        }
+		p.one1 {
+            outline: solid 5px red;
+        }
+        p.two1 {
+            outline: #AAA groove 6px;
+        }
+        p.three1 {
+            outline: 5px inset rgb(217, 0, 217);
+        }
+		div {
+            width: 100px;
+            height: 100px;
+            margin: 50px 0px 0px 50px;
+            border: 1px solid red;
+            outline: 6px inset #AAA;
+            outline-offset: 10px;
+        }
+    </style>
+</head>
+<body>
+    <span class="dotted">dotted</span>
+    <span class="dashed">dashed</span>
+    <span class="solid">solid</span>
+    <span class="double">double</span>
+    <span class="groove">groove</span>
+    <span class="ridge">ridge</span>
+    <span class="inset">inset</span>
+    <span class="outset">outset</span>
+	<p class="one">red</p>
+    <p class="two">#AAA</p>
+    <p class="three">rgb(217, 0, 217)</p>
+	<p class="one1">red</p>
+    <p class="two1">#AAA</p>
+    <p class="three1">rgb(217, 0, 217)</p>
+	<div></div>
+</body>
+</html>

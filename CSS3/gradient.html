@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 210px;
+            height: 100px;
+            float: left;
+            margin: 10px;
+			border: 1px solid black;
+        }
+        .one {
+            background: linear-gradient(to right bottom, red, blue 70px);
+        }
+        .two {
+            background: linear-gradient(190deg, #000, #FFF);
+        }
+        .three {
+            background: linear-gradient(red, green, blue);
+        }
+        .four {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+		.one1 {
+            background: radial-gradient(circle at 50%, red, yellow, lime);
+        }
+        .two1 {
+            background: radial-gradient(ellipse 100px 30px at 30%, red, yellow, lime);
+        }
+        .three1 {
+            background: radial-gradient(circle 100px at 50%, red 10%, yellow 50%, lime 100px);
+        }
+        .four1 {
+            background: radial-gradient(circle closest-corner at 50px 30px, red, yellow, lime);
+        }
+		.one2 {
+            background: conic-gradient(at 50%, red, orange, yellow, green, blue, indigo, violet, red);
+        }
+       .two2 {
+            background: conic-gradient(red 0deg 30deg, orange 30deg 50deg, yellow 50deg 200deg, green 200deg 300deg, blue 300deg 360deg);
+        }
+        .three2 {
+            background: conic-gradient(from 90deg, red 0% 55%, yellow 55% 90%, lime 90% 100%);
+        }
+        .four2 {
+            background: conic-gradient(#fff 0.25turn, #000 0.25turn 0.5turn, #fff 0.5turn 0.75turn, #000 0.75turn);
+        }
+		.one3 {
+            background: repeating-linear-gradient(190deg, #000 0px 10px, #FFF 10px 20px);
+        }
+       .two3 {
+            background: repeating-radial-gradient(circle 100px at 50%, red 0% 10%, yellow 10% 30%, lime 30% 40%);
+        }
+        .three3 {
+            background: repeating-conic-gradient(#69f 0 36deg, #fd44ff 36deg 72deg);
+        }
+        .four3 {
+            background: conic-gradient(#fff 0.25turn, #000 0.25turn 0.5turn, #fff 0.5turn 0.75turn, #000 0.75turn) top left / 25% 25% repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">some text inside</div>
+    <div class="two">some text inside</div>
+    <div class="three">some text inside</div>
+    <div class="four">some text inside</div>
+	<div class="one1">some text inside</div>
+    <div class="two1">some text inside</div>
+    <div class="three1">some text inside</div>
+    <div class="four1">some text inside</div>
+	<div class="one2">some text inside</div>
+    <div class="two2">some text inside</div>
+    <div class="three2">some text inside</div>
+    <div class="four2">some text inside</div>
+	<div class="one3">some text inside</div>
+    <div class="two3">some text inside</div>
+    <div class="three3">some text inside</div>
+    <div class="four3">some text inside</div>
+</body>
+</html>

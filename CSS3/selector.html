@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML form表单演示</title>
+	<!-- <link rel='stylesheet' href='./selector.css'> -->
+	<style>
+		@import url('./selector.css');
+	</style>
+</head>
+<body>
+	<p>Text example </p>
+	<p class='info'>Info</p>
+	<p class='selected'>selected</p>
+	<p class='selected info'>info selected</p>
+	<ul>
+		<li><a href='www.baidu.com'>baidu</a></li>
+		<li>sohu</li>
+	</ul>
+	<p>text next to ul</p>
+	<p>欢迎访问<strong>编程帮</strong>！</p>
+	<p><em><strong>编程帮（biancheng.net）</strong></em>，一个在线学习编程的网站，专注于分享优质编程教程。</p>
+	<h1>header 1</h1>
+	<p>text next to header 1</p>
+	<h1>header 1-1<p>text within header 1-1</p></h1>
+	<ul class='task'>
+		<li>option 1</li>
+	</ul>
+	<p>text next to ul.task</p>
+	<h2>header 2</h3>
+	<h3>header 3</h3>
+	<p>Text following h2, not direct</p>
+	<h3>header 31</h3>
+	<p>Text following h2, not direct, 2</p>
+    <form action="./userinfo.php" method="POST">
+        <!-- 文本输入框控件 -->
+        <label class='navy'>用户名： </label><input name="username" type="text"><br>
+        <!-- 密码框控件 -->
+        <label id='nav'>密&emsp;码： </label><input name="password" type="password"><br>
+        <!-- 下拉菜单控件 -->
+        <label>性&emsp;别：</label>
+        <select name="sex">
+            <option value="1">男</option>
+            <option value="2">女</option>
+            <option value="3">未知</option>
+        </select>
+        <br>
+        <!-- 复选框控件 --> 
+        <label>爱&emsp;好：</label>
+        <input type="checkbox" name="hobby" value="1">听音乐
+        <input type="checkbox" name="hobby" value="2">看电影
+        <input type="checkbox" name="hobby" value="3">打游戏
+		
+        <br>
+        <!-- 单选按钮控件 -->
+        <label>学&emsp;历：</label>
+        <input type="radio" name="education" value="1">小学
+        <input type="radio" name="education" value="2">中学
+        <input type="radio" name="education" value="3">本科
+        <input type="radio" name="education" value="4">硕士
+        <input type="radio" name="education" value="5">博士
+        <br>
+        <!-- 按钮 -->
+        <input type="submit" value="提 交">&emsp;&emsp;
+        <input type="reset" value="重 置">
+    </form>
+</body>
+</html>

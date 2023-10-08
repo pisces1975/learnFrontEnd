@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 550px;
+            height: 100px;
+            margin-top: 20px;
+            border: 1px solid red;
+        }
+        div.hidden {
+            overflow: hidden;
+        }
+        div.scroll {
+            overflow: scroll;
+        }
+        div.auto {
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="hidden">
+        visible：默认值，对溢出的内容不做处理，内容会在元素内容区之外显示；<br>
+        hidden：隐藏溢出元素内容区的内容；<br>
+        scroll：隐藏溢出元素内容区的内容，并在元素的左侧和下方分别创建一个滚动条，通过滑动滚动条可以查看元素中的所有内容；<br>
+        auto：如果出现内容溢出，则会在元素左侧创建一个滚动条，通过滑动滚动条可以查看元素中的全部内容；<br>
+        inherit：从父元素继承 overflow 属性的值。
+    </div>
+    <div class="scroll">
+        visible：默认值，对溢出的内容不做处理，内容会在元素内容区之外显示；<br>
+        hidden：隐藏溢出元素内容区的内容；<br>
+        scroll：隐藏溢出元素内容区的内容，并在元素的左侧和下方分别创建一个滚动条，通过滑动滚动条可以查看元素中的所有内容；<br>
+        auto：如果出现内容溢出，则会在元素左侧创建一个滚动条，通过滑动滚动条可以查看元素中的全部内容；<br>
+        inherit：从父元素继承 overflow 属性的值。
+    </div>
+    <div class="auto">
+        visible：默认值，对溢出的内容不做处理，内容会在元素内容区之外显示；<br>
+        hidden：隐藏溢出元素内容区的内容；<br>
+        scroll：隐藏溢出元素内容区的内容，并在元素的左侧和下方分别创建一个滚动条，通过滑动滚动条可以查看元素中的所有内容；<br>
+        auto：如果出现内容溢出，则会在元素左侧创建一个滚动条，通过滑动滚动条可以查看元素中的全部内容；<br>
+        inherit：从父元素继承 overflow 属性的值。
+    </div>
+</body>
+</html>

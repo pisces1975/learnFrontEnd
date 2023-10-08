@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS颜色</title>
+    <style>
+	body {
+            font-family: serif, sans-serif;
+			font-style: normal;
+        }
+     .normal {
+            font-style: normal;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .oblique {
+            font-style: oblique;
+        }
+        .inherit {
+            font-style: inherit;
+        }
+		
+	p {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    #rgb {
+        color: rgb(255, 0, 0);
+    }
+    #rgba {
+        color: rgba(255, 0, 0, 0.5);
+    }
+    #hex {
+        color: #EE82EE;
+    }
+    #short {
+        color: #E8E;
+    }
+    #hsl {
+        color: hsl(0, 50%, 50%);
+    }
+    #hsla {
+        color: hsla(0, 50%, 50%, 0.5);
+    }
+    #built {
+        color: green;
+    }
+	#bg {
+        color: white;
+        background-color: blue;
+        margin: 20px;   /*设置外边距为 20px*/
+        padding: 20px;  /*设置内边距为 20px*/
+        border: 5px dotted yellow;  /*设置一个宽 10px 的黄色虚线边框*/
+    }
+	#bg1 {
+        color: red;
+        background-image: url('./bg-image.gif');
+        margin: 20px;   /*设置外边距为 20px*/
+        padding: 20px;  /*设置内边距为 20px*/
+		/*background-repeat: repeat-x;*/
+		background-repeat: no-repeat;
+        background-position: 0% 50%;
+        border: 5px dotted red;  /*设置一个宽 10px 的红色虚线边框*/
+    }
+	
+	#bg2 {
+        background-image: url('./bg-image.gif');
+        background-repeat: repeat-x;
+        background-size: contain;
+    }
+	
+	#bg3 {
+        color: black;
+        background-image: url('./bg-image.gif');
+        background-repeat: no-repeat;
+        background-origin: border-box;
+        background-position: 5px 5px;
+        margin: 20px;   /*设置外边距为 20px*/
+        padding: 20px;  /*设置内边距为 20px*/
+        border: 10px dotted red;  /*设置一个宽 10px 的红色虚线边框*/
+    }
+	#bg4 {
+        background-image: url('./bg-image.gif');
+        background-clip: content-box;
+        margin: 20px;   /*设置外边距为 20px*/
+        padding: 20px;  /*设置内边距为 20px*/
+        border: 10px dotted red;  /*设置一个宽 10px 的红色虚线边框*/
+    }
+	#bg5 {
+        background: #ccc url('./bg-image.gif') 0px 0px/contain repeat-x border-box;
+        margin: 10px;   /*设置外边距为 20px*/
+        padding: 10px;  /*设置内边距为 20px*/
+        border: 5px dotted red;  /*设置一个宽 10px 的红色虚线边框*/
+    }
+	p.weight-100 {
+        font-weight: 100;
+    }
+    p.weight-200 {
+        font-weight: 200;
+    }
+    p.normal {
+        font-weight: normal;
+    }
+    p.bold {
+        font-weight: bold;
+    }
+    p.bolder {
+        font-weight: bolder;
+    }
+	.xx_small {
+            font-size: xx-small;
+        }
+        .x_small {
+            font-size: x-small;
+        }
+        .small {
+            font-size: small;
+        }
+        .medium {
+            font-size: medium;
+        }
+        .large {
+            font-size: large;
+        }
+        .x-large {
+            font-size: x-large;
+        }
+        .xx-large {
+            font-size: xx-large;
+        }
+        .smaller {
+            font-size: smaller;
+        }
+        .larger {
+            font-size: larger;
+        }
+        .font-20 {
+            font-size: 20px;
+        }
+		.fsmall {
+            font-variant: small-caps
+        }
+	p.info {
+        font: italic bold 12px/30px arial, sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <p id="rgb">
+        color: rgb(255, 0, 0);
+    </p>
+    <p id="rgba">
+        color: rgba(255, 0, 0, 0.5);
+    </p>
+    <p id="hex">
+        color: #EE82EE;
+    </p>
+    <p id="short">
+        color: #E8E;
+    </p>
+    <p id="hsl">
+        color: hsl(0, 50%, 50%);
+    </p>
+    <p id="hsla">
+        color: hsla(0, 50%, 50%, 0.5);
+    </p>
+    <p id="built">
+        color: green;
+    </p>
+	<p id="bg">background-color 属性</p>
+	<p id="bg1">background-image 属性</p>
+	<p id="bg2">background-size 属性</p>
+	 <p id="bg3">background-origin 属性</p>
+	<p id="bg4">background-clip 属性</p>
+	<p id="bg5">background 属性</p>
+	<p class="normal">normal：显示一个标准的字体</p>
+    <p class="italic">italic：显示一个斜体的字体</p>
+    <p class="oblique">oblique：显示一个倾斜的字体</p>
+    <p class="inherit">inherit：从父元素继承字体样式</p>
+	<p class="weight-100">font-weight: 100;</p>
+    <p class="weight-200">font-weight: 200;</p>
+    <p class="normal">font-weight: normal;</p>
+    <p class="bold">font-weight: bold;</p>
+    <p class="bolder">font-weight: bolder;</p>
+	<p class="xx_small">将字体大小设置为：xx-small</p>
+    <p class="x_small">将字体大小设置为：x-small</p>
+    <p class="small">将字体大小设置为：small</p>
+    <p class="medium">将字体大小设置为：medium</p>  
+    <p class="large">将字体大小设置为：large</p>   
+    <p class="x-large">将字体大小设置为：x-large</p>   
+    <p class="xx-large">将字体大小设置为：xx-large</p>   
+    <p class="smaller">将字体大小设置为：smaller</p>   
+    <p class="larger">将字体大小设置为：larger</p>
+    <p class="font-20">将字体大小设置为 20 像素</p> 
+	<p class="fsmall">This is a paragraph</p>
+	<p>使用 font 属性需要遵循以下顺序：</p>
+    <p class="info">font：[[font-style||font-variant||font-weight||font-stretch]?font-size[ /line-height]?font-family] | caption | icon | menu | message-box | small-caption | status-bar</p>
+</body>
+</html>

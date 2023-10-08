@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS中的单位</title>
+        <style>
+            .box{
+                width: 60vw;
+                height: 88vh;
+                border: 1ex solid black;
+                font-size: 16px;
+            }
+            .info{
+                font-size: 2em;
+            }
+            .ex > span{
+                font-size: 3ex;
+            }
+            .ch > span{
+                font-size: 4ch;
+            }
+			
+			.box1{
+                width: 4in;
+                height: 4.5cm;
+                border: 2mm solid black;
+                font-size: 16px;
+            }
+            .pt{
+                font-size: 2pt;
+            }
+            .pc{
+                font-size: 3pc;
+            }
+        </style>
+    </head> 
+    <body>
+        <div class="box">
+            这是 16px 的字体
+            <p class="info">这是 2em 的字体</p>
+            <p class="ex">
+                x：<span>这是 3ex 的字体</span>
+            </p>
+            <p class="ch">
+                0：<span>这是 4ch 的字体</span>
+            </p>
+        </div>  
+		<div class="box1">
+            这是 16px 的字体
+            <p class="pt">这是 2pt 的字体</p>
+            <p class="pc">这是 3pc 的字体</p>
+        </div>
+    </body>
+</html>

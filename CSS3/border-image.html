@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 200px;
+            border: 27px solid;
+            padding: 10px;
+            border-image-source: url(./border.png);
+        }
+		div.a {
+            width: 200px;
+            border: 27px solid;
+            padding: 10px;
+            border-image-source: url(./border.png);
+			border-image-slice: 27;
+        }
+		div.b {
+            width: 200px;
+            border: 27px solid;
+            padding: 10px;
+            border-image-source: url(./border.png);
+            border-image-slice: 27;
+            border-image-width: 10px 1 0.5 15px;
+        }
+		div.c {
+            width: 200px;
+            border: 27px solid;
+            padding: 10px;
+            margin: 30px 0px 0px 30px;
+            border-image-source: url(./border.png);
+            border-image-slice: 20;
+            border-image-outset: 25px;
+            background-color: #CCC;
+        }
+		div.d {
+            width: 200px;
+            border: 27px solid;
+            padding: 10px;
+            border-image-source: url(./border.png);
+            border-image-slice: 27;
+            border-image-repeat: round repeat;
+        }
+		div.e {
+            width: 200px;
+            border: 27px solid;
+            padding: 10px;
+            border-image: url(./border.png) 27 round;
+        }
+    </style>
+</head>
+<body>
+    <div>使用图片替换默认边框</div>
+	<br>
+	<div class='a'>使用图片替换默认边框</div>
+	<br>
+	<div class='b'>使用图片替换默认边框</div>
+	<br>
+	<div class='c'>使用图片替换默认边框</div>
+	<br><br>
+	<div class='d'>使用图片替换默认边框</div>
+	<br><br>
+	<div class='e'>使用图片替换默认边框</div>
+</body>
+</html>

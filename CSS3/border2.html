@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p {
+            width: 0px;
+            margin: 5px;
+            float: left;
+           
+        }
+        .top {
+            border: 50px solid;
+            border-color: red transparent transparent;
+        }
+        .bottom {
+            border-width: 0 50px 50px;
+            border-style: solid;
+            border-color: transparent transparent red;
+        }
+        .left {
+            border-top: 50px solid transparent;
+            border-left: 50px solid black;
+            border-right: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+        }
+        .right {
+            border-width: 50px 50px 50px 0px;
+            border-style: solid;
+            border-color: transparent red transparent transparent;
+        }       
+    </style>
+</head>
+<body>
+    <p class="top"></p>
+    <p class="bottom"></p>
+    <p class="left"></p>
+    <p class="right"></p>
+</body>
+</html>

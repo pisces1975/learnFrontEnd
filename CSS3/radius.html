@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div {
+            width: 350px;
+            height: 100px;
+            padding: 15px 0px 0px 25px;
+        }
+        .one {
+            border-top-left-radius: 2em 0.5em;
+            border-top-right-radius: 1em 3em;
+            border-bottom-right-radius: 4em 0.5em;
+            border-bottom-left-radius: 1em 3em;
+            background-color: #CCC;
+            margin-bottom: 10px;
+        }
+        .two {
+            border-top-left-radius:2em;
+            border-top-right-radius:2em;
+            border-bottom-right-radius:2em;
+            border-bottom-left-radius:2em;
+            background-color: #888;
+        }
+		ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        margin: 10px 0 0 10px;
+        padding: 10px;
+        width: 200px;
+        float: left;
+        background: #bbb;
+    }
+    h2 {
+        clear: left;
+    }
+    .test .one {
+        border-radius: 10px;
+    }
+    .test .two {
+        border-radius: 10px 20px;
+    }
+    .test .three {
+        border-radius: 10px 20px 30px;
+    }
+    .test .four {
+        border-radius: 10px 20px 30px 40px;
+    }
+    .test2 .one {
+        border-radius: 10px/5px;
+    }
+    .test2 .two {
+        border-radius: 10px 20px/5px 10px;
+    }
+    .test2 .three {
+        border-radius: 10px 20px 30px/5px 10px 15px;
+    }
+    .test2 .four {
+        border-radius: 10px 20px 30px 40px/5px 10px 15px 20px;
+    }
+    </style>   
+</head>
+<body>
+    <div class="one">
+        border-top-left-radius: 2em 0.5em;<br>
+        border-top-right-radius: 1em 3em;<br>
+        border-bottom-right-radius: 4em 0.5em;<br>
+        border-bottom-left-radius: 1em 3em;
+    </div>
+    <div class="two">
+        border-top-left-radius:2em;<br>
+        border-top-right-radius:2em;<br>
+        border-bottom-right-radius:2em;<br>
+        border-bottom-left-radius:2em;
+    </div>
+	<h2>水平与垂直半径相同时：</h2>
+    <ul class="test">
+        <li class="one">提供1个参数<br>border-radius:10px;</li>
+        <li class="two">提供2个参数<br>border-radius:10px 20px;</li>
+        <li class="three">提供3个参数<br>border-radius:10px 20px 30px;</li>
+        <li class="four">提供4个参数<br>border-radius:10px 20px 30px 40px;</li>
+    </ul>
+    <h2>水平与垂直半径不同时：</h2>
+    <ul class="test2">
+        <li class="one">提供1个参数<br>border-radius:10px/5px;</li>
+        <li class="two">提供2个参数<br>border-radius:10px 20px/5px 10px;</li>
+        <li class="three">提供3个参数<br>border-radius:10px 20px 30px/5px 10px 15px;</li>
+        <li class="four">提供4个参数<br>border-radius:10px 20px 30px 40px/5px 10px 15px 20px;</li>
+    </ul>
+</body>
+</html>

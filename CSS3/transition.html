@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+            margin: 10px 0px 0px 10px;
+            transition-property: width, background;
+			transition-duration: .25s, 3s;
+			transition-timing-function: ease;
+			transition-delay: 2s;
+        }
+        div:hover {
+            width: 200px;
+            background-color: green;
+        }
+		
+		div.a {
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+            margin: 10px 0px 0px 10px;
+            transition: width .25s linear 1.9s, background 1s 2s, transform 2s;
+        }
+        div.a:hover {
+            width: 200px;
+            background-color: blue;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+	<div class='a'></div>
+</body>
+</html>

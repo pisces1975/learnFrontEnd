@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p.one::after {
+            content:"";
+            display: inline-block;
+            width: 50px;
+            height: 10px;
+            background: blue;
+        }
+        p.two::after {
+            content:"要插入的内容";
+            color: red;
+            font-size: 6px;
+        }
+        p.three::after {
+            content: url('./icon.png');
+            position: relative;
+            top: 8px;
+        }
+		p.one1::before {
+            content:"";
+            display: inline-block;
+            width: 50px;
+            height: 10px;
+            background: yellow;
+        }
+        p.two1::before {
+            content:"要插入的内容";
+            color: brown;
+            font-size: 6px;
+        }
+        p.three1::before {
+            content: url('./icon.png');
+            position: relative;
+            top: 8px;
+        }
+		p.b::first-letter{
+            font-size: 2em;
+            color: blue;
+        }
+		p.a::first-line{
+            font-size: 1.5em;
+            color: blue;
+            font-weight: bold;
+        }
+		p.c::selection{
+            color: red;
+            background-color: #CCC;
+        }
+		input.text::placeholder{
+            color: red;
+            background-color: #CCC;
+        }
+    </style>
+</head>
+<body>
+    <p class="one">伪元素 ::after</p>
+    <p class="two">伪元素 ::after</p>
+    <p class="three b">伪元素 ::after</p>
+	<p class="one1">伪元素 ::before</p>
+    <p class="two1">伪元素 ::before</p>
+    <p class="three1">伪元素 ::before</p>
+	<p class="a">伪元素 ::first-line 用来设置指定元素中内容第一行的样式，与 ::first-letter 类似，伪元素 ::first-line 也仅可以用于块级元素，行内元素想要使用该伪元素，则需要先将其转换为块级元素。</p>
+	<p class="c">伪元素 ::selection 用来设置对象被选中时的样式，需要注意的是，伪元素 ::selection 中只能定义元素被选中时的 color、background、cursor、outline 以及 text-shadow（IE11 尚不支持定义该属性）等属性。 </p>
+	<input placeholder="请输入一段文本">未使用伪元素 ::placeholder<br>
+    <input placeholder="请输入一段文本" class="text">使用伪元素 ::placeholder 的效果
+</body>
+</html>

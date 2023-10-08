@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #CCC;
+            margin: 20px 0px 0px 10px;
+            float: left;
+        }
+		div.a {
+            width: 100px;
+            height: 100px;
+            background-color: #CCC;
+            transform: translate(100px, 10px);
+        }
+		div.b {
+            width: 100px;
+            height: 100px;
+            background-color: #aaa;
+            margin: 20px 0px 0px 20px;
+            transform: rotate(45deg);
+        }
+		div.c {
+            width: 100px;
+            height: 100px;
+            background-color: #150;
+            transform: scaleX(0.7) scaleY(0.4);
+        }
+		div.d {
+            width: 100px;
+            height: 100px;
+            background-color: #C00;
+            margin: 20px 0px 0px 10px;
+            transform: skew(-15deg, 20deg);
+        }
+		.one {
+            transform: matrix(0.866, 0.5, -0.5, 0.866, 0, 0);
+        }
+        .two {
+            margin-left: 35px;
+            transform: matrix(0.586, 0.8, -0.8, 0.686, 0, 0);
+        }
+        .three {
+            margin-left: 40px;
+            margin-top: 25px;
+            transform: matrix(0.586, 0.8, -0.8, 0.866, 0, 0);
+        }
+        .four {
+            transform: matrix(0.586, 0.8, -0.8, 0.586, 40, 30);
+        }
+    </style>
+</head>
+<body>
+    <div class='a'></div>
+	<div class='c'></div>
+	<div class='b'></div>
+	<div class='d'></div>
+	<div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+</body>
+</html>

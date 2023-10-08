@@ -1,0 +1,57 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+p {
+    color: blue;
+}
+#nav {
+    color: red;
+}
+.navy {
+    color: #ffff3f;
+}
+.info {
+    font-weight:bold;
+}
+.selected {
+    color: red;
+}
+.info.selected {
+    background: blue;
+}
+ul li a {
+    text-decoration: none;
+	color: pink;
+}
+p > strong {
+    color:gray;
+}
+/* h1 + p {
+    color: green;
+    font-size: 18px;
+} */
+ul.task + p {
+    color: #f0f;
+    text-indent: 30px;
+}
+h2 ~ p {
+    color: brown;
+    font-size: 18px;
+}
+h1, h2, h3 {
+    font-weight: normal;
+}
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-size: 28px;
+}
+h3 {
+    font-size: 22px;
+}
+input[type="checkbox"] {
+   color: #ff0000;
+   font-size: 18px;
+}

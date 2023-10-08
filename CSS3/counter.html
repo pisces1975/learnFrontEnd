@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            counter-reset: chapter; 
+        }
+        h5, h6, h7 {
+            margin: 5px 0 5px;
+        }
+        h5 {
+            counter-reset: section;
+            counter-increment: chapter;
+        }
+        h6 {
+            counter-increment: section;
+			counter-reset: para;
+        }
+		h7 {
+			counter-increment: para;
+		}
+        h5:before {
+            content: "Chapter " counter(chapter) ". ";
+        }
+        h6:before {
+            content: counter(chapter) "." counter(section) " ";
+        }
+		h7:before {
+			content: counter(chapter) "." counter(section) "."counter(para) " ";
+		}
+		ol {
+            /* 为每个ol元素创建新的计数器实例 */
+            counter-reset: ol-list;
+            list-style-type: none;
+        }
+        li:before {
+            /* 只增加计数器的当前实例 */
+            counter-increment: ol-list;
+            /* 为所有计数器实例增加以“.”分隔的值 */
+            content: counters(ol-list, ".") "、";
+        }
+    </style>
+</head>
+<body>
+    <h5>程序设计语言</h5>
+    <h6>HTML and CSS</h6>
+    <h6>JavaScript</h6>
+    <h6>PHP</h6>
+    <h6>Java</h6>
+	<h7>String</h7>
+	<h7>Class</h7>
+    <h5>数据库管理系统</h5>
+    <h6>MySQL</h6>
+    <h6>MariaDB</h6>
+    <h6>PostgreSQL</h6>
+    <h6>Oracle</h6>
+	<ol>
+        <li>item</li>
+        <li>item
+            <ol>
+                <li>item</li>
+                <li>item</li>
+                <li>item
+                    <ol>
+                        <li>item</li>
+                        <li>item</li>
+                    </ol>
+                </li>
+                <li>item
+                    <ol>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>item</li>
+        <li>item</li>
+    </ol>
+</body>
+</html>

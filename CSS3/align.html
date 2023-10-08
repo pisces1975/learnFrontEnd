@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p.a{
+            border: 1px solid black;    /*为了能更直观的体现出文本的对齐方式，这里给p标签设置一个边框*/
+        }
+        .text1 {
+            text-align: left;
+        }
+        .text2 {
+            text-align: right;
+        }
+        .text3 {
+            text-align: center;
+        }
+		.text {
+            width: 130px;
+            text-align: justify;
+        }
+	.none {
+        text-decoration: none;
+		text-transform: none;
+    }
+    .underline {
+        text-decoration: underline;
+    }
+    .overline {
+        text-decoration: overline;
+    }
+    .line-through {
+        text-decoration: line-through;
+    }
+	
+	.uppercase {
+        text-transform: uppercase;
+    }
+    .lowercase {
+        text-transform: lowercase;
+    }
+    .capitalize {
+        text-transform: capitalize;
+    }
+	
+	p.b {
+        border: 1px solid #ccc;
+        text-indent:2em;
+    }
+	
+	p.small {
+        line-height: 0.8;
+    }
+    p.big {
+        line-height: 200%;
+    }
+	p.c {
+        letter-spacing: 2px;
+    }
+	p.d {
+        word-spacing: 2em;
+    }
+	p.e {
+        text-shadow: 2px 15px red,
+                     0px -15px 5px blue;
+    }
+	
+	img {
+		width: 150px;
+		height: 80px;
+	}
+	img.btn {
+        vertical-align: super;
+    }
+    img.top {
+        vertical-align: text-top;
+    }
+	
+	p.f {
+            white-space: pre-line;
+        }
+	.ltr {
+            direction: ltr;
+        }
+        .rtl {
+            direction: rtl;
+        }
+    </style>
+</head>
+<body>
+    <p class="text1 a">左对齐</p>
+    <p class="text2 a">右对齐</p>
+    <p class="text3 a">居中对齐</p>
+	<p class="text a">两端对齐、两端对齐,两端对齐，两端对齐，两端对齐</p>
+	<p class="none">无装饰文字</p>
+        <p class="underline">带下划线文字</p>
+        <p class="overline">带上划线文字</p>
+        <p class="line-through">带贯穿线文字</p>
+	<p>原文： text-transform &emsp;<span class="none">转换后：text-transform</span></p>
+    <p>原文： text-transform &emsp;<span class="uppercase">转换后：text-transform</span></p>
+    <p>原文： TEXT-TRANSFROM &emsp;<span class="lowercase">转换后：text-transform</span></p>
+    <p>原文： text-transform &emsp;<span class="capitalize">转换后：text-transform</span></p>
+	<p class="b">text-indent 属性用来为元素中的文本添加首行缩进的效果，至于是从左侧还是从右侧缩进则取决于 direction 属性定义的文本方向。</p>
+	<p>
+        这是默认的标准行高<br>
+        这是默认的标准行高<br>
+        这是默认的标准行高<br>
+    </p>
+    <p class="small">
+        使用数字定义一个较小的行高<br>
+        使用数字定义一个较小的行高<br>
+        使用数字定义一个较小的行高<br>
+    </p>
+    <p class="big">
+        使用百分比的形式定义一个较大的行高<br>
+        使用百分比的形式定义一个较大的行高<br>
+        使用百分比的形式定义一个较大的行高<br>
+    </p>
+	<p class="c">
+        letter-spacing 属性用来设置字符之间的间距<br>
+        letter-spacing 属性用来设置字符之间的间距<br>
+        letter-spacing 属性用来设置字符之间的间距<br>
+    </p>
+	<p class="d">
+        word-spacing 属性用来设置单词与单词之间的间距，但对中文无效<br>
+        This is an example of English text<br>
+        word-spacing 属性用来设置单词与单词之间的间距，但对中文无效<br>
+    </p>
+	<p class="e">text-shadow 属性可以为文本添加阴影和模糊效果</p>
+	<p>vertical-align <img class="btn" src="./vertical-align.png">属性用来定义元素内文本的垂直对齐方式</p>
+    <p>vertical-align <img class="top" src="./vertical-align.png">属性用来定义元素内文本的垂直对齐方式</p>
+	<p class="f">
+        white-space 属性用来设置如何处理元素内的空白     SSSS                         
+        white-space 属性用来设置如何处理元素内的空白
+    </p>
+	<p class="ltr">direction 属性用来设置文本的方向</p>
+    <p class="rtl">direction 属性用来设置文本的方向</p>
+</body>
+</html>

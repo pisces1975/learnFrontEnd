@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* table, th, td {
+    border: 1px solid blue;
+} */
+
+		table {
+            float: left;
+        }
+        .table_one {
+            border-collapse: separate;
+			caption-side: top;
+			empty-cells: hide;
+        }
+        .table_two {
+            margin-left: 20px;
+            border-collapse: collapse;
+			caption-side: bottom;
+			empty-cells: show;
+        }
+		.table_3 {
+            border-spacing: 15px 10px;
+        }
+        .table_4 {
+            margin-left: 20px;
+            border-spacing: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table class="table_3" border="1">
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>11</td>
+        </tr>
+    </table>
+    <table class="table_4" border="1px">
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>11</td>
+        </tr>
+    </table>
+	<table class="table_one"  border="1px">
+	<caption>Caption 1</caption>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>15</td>
+        </tr>
+		<tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>11</td>
+        </tr>
+    </table>
+    <table class="table_two" border="1px">
+	<caption>Caption 2</caption>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>11</td>
+        </tr>
+		<tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

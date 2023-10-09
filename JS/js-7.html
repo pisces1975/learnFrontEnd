@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+        div {
+            width: 650px;
+            max-height: 350px;
+			min-height: 10px;
+            margin-top: 20px;
+            border: 1px solid grey;
+        }
+        div.hidden {
+            overflow: hidden;
+        }
+        div.scroll {
+            /* overflow-y: scroll; */
+			overflow-y: auto;
+        }
+        div.auto {
+            overflow: auto;
+        }
+    </style>
+    <title>Learn front end techs</title>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<h3>Cookie</h3>
+	<div class='scroll' id='div2' style='color:#3a5'>	
+		<p id='out2'></p>
+		<script>
+			/**
+			* 添加 Cookie
+			* @param {[string]} name       [Cookie 的名称]
+			* @param {[string]} value      [Cookie 的值]
+			* @param {[number]} daysToLive [Cookie 的过期时间]
+			*/
+			function setCookie(name, value, daysToLive) {
+				// 对 cookie 值进行编码以转义其中的分号、逗号和空格
+				var cookie = name + "=" + encodeURIComponent(value);
+			   
+				if(typeof daysToLive === "number") {
+					/* 设置 max-age 属性 */
+					cookie += "; max-age=" + (daysToLive*24*60*60);
+				}
+				document.cookie = cookie;
+			}
+			function getCookie(name) {
+				// 拆分 cookie 字符串
+				var cookieArr = document.cookie.split(";");
+			   
+				// 循环遍历数组元素
+				for(var i = 0; i < cookieArr.length; i++) {
+					var cookiePair = cookieArr[i].split("=");
+				   
+					/* 删除 cookie 名称开头的空白并将其与给定字符串进行比较 */
+					if(name == cookiePair[0].trim()) {
+						// 解码cookie值并返回
+						return decodeURIComponent(cookiePair[1]);
+					}
+				}
+				// 如果未找到，则返回null
+				return null;
+			}
+			var ptag2 = document.getElementById('out2');
+			/*setCookie('url', 'http://c.biancheng.net/;', 0.5);
+			setCookie("course", 'JavaScript', 0);
+			setCookie("title", "cookie", 0.1);
+			setCookie('username', 'JeffreyZ', 0.1); */
+			
+			ptag2.innerHTML = 'url = ' + getCookie('url') + '<br>';
+			ptag2.innerHTML += 'course = ' + getCookie('course') + '<br>';
+			ptag2.innerHTML += 'title = ' + getCookie('title') + '<br>';
+			ptag2.innerHTML += 'username = ' + getCookie('username') + '<br>';
+			
+			setCookie('password', '1234567890', 1);
+		</script>
+			
+	</div>
+	<h3>Type conversion</h3>
+	<div class='scroll' id='div3' style='color:#3aa'>	
+		<script>
+			var str = "http://c.biancheng.net/";
+			var num = 123;
+			var res = str + num;
+			document.write(typeof res + '<br>');  // 输出：string
+			document.write(res + '<br>');         // 输出：http://c.biancheng.net/123
+			document.write("3" - 2 + '<br>');           // 输出：1
+			document.write("3" + 2 + '<br>');           // 输出："32"
+			document.write(3 + "2" + '<br>');           // 输出："32"
+			document.write("3" * "2" + '<br>');         // 输出：6
+			document.write("10" / "2" + '<br>');        // 输出：5
+			document.write(1 + true + '<br>');          // 输出：2
+			document.write(1 + false + '<br>');         // 输出：1
+			document.write(1 + undefined + '<br>');     // 输出：NaN
+			document.write(3 + null + '<br>');          // 输出：3
+			document.write("3" + null + '<br>');        // 输出："3null"
+			document.write(true + null + '<br>');       // 输出：1
+			document.write(true + undefined + '<br>');  // 输出：NaN
+			document.write(Number("10.5") + '<br>');  // 输出：10.5
+			document.write(Number(true) + '<br>');    // 输出：1
+			document.write(Number(false) + '<br>');   // 输出：0
+			document.write(Number(null) + '<br>');    // 输出：0
+			document.write(parseInt("1101",2) + '<br>');   // 输出：13
+			document.write(parseInt("a37f",16) + '<br>');  // 输出：41855
+			document.write(parseInt("123") + '<br>');      // 输出：123
+			document.write(parseInt("  123") + '<br>');    // 输出：123
+			document.write(parseFloat("312.456") + '<br>');  // 输出：312.456
+			document.write(parseFloat("-3.12") + '<br>');    // 输出：-3.12
+			document.write(parseFloat("+3.12") + '<br>');    // 输出：3.12
+			document.write(parseFloat(".12") + '<br>');      // 输出：0.12
+		</script>
+	</div>
+</body>
+</html>

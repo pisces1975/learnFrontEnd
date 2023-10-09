@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+        div {
+            width: 350px;
+            max-height: 250px;
+			min-height: 10px;
+            margin-top: 20px;
+            border: 1px solid grey;
+        }
+        div.hidden {
+            overflow: hidden;
+        }
+        div.scroll {
+            /* overflow-y: scroll; */
+			overflow-y: auto;
+        }
+        div.auto {
+            overflow: auto;
+        }
+    </style>
+    <title>Learn front end techs</title>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<h3>Event delegation 1</h3>
+	<div class='scroll' id='div2' style='color:#3a5'>	
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<script>
+			window.onload = function(){
+				var the_ul = document.getElementById('list');
+				var the_li = the_ul.getElementsByTagName('li');
+				for( var i=0; i < the_li.length; i++ ){
+					the_li[i].onclick = function(){
+						console.log(this.innerHTML)
+					}
+				}
+			}
+		</script>
+	</div>
+	<h3>Event delegation 2</h3>
+	<div class='scroll' id='div1' style='color:#9a5'>
+		<ul id="list1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<script>
+			window.onload = function(){
+				var the_ul = document.getElementById('list1');
+				the_ul.onclick = function(e){
+					console.log(e.target.innerHTML)
+				}
+			}
+		</script>
+	</div>
+	<h3>Event delegation 3</h3>
+	<div class='scroll' id='div3' style='color:#9ab'>
+		<ul id="list2" style="width: 100px;margin:0;float: left;">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<button style="float:left;" id="addli">添加一个 li</button>
+		<button style="float:left;" id="delli">删除一个 li</button>
+		<script>
+			window.onload = function(){
+				var the_ul = document.getElementById('list2');
+				var the_li = the_ul.getElementsByTagName('li');
+				var sum = the_li.length
+				the_ul.onclick = function(e){
+					console.log(e.target.innerHTML)
+				};
+				document.getElementById('addli').onclick = function (){
+					var newli = document.createElement("li");
+					newli.innerHTML = ++sum;
+					the_ul.appendChild(newli);
+				};
+				document.getElementById('delli').onclick = function (){
+					the_ul.firstElementChild.remove();
+				};
+			}
+		</script>
+	</div>
+</body>
+</html>

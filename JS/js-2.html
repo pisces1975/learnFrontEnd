@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+    <button type="button" onclick="myBtn()">按钮</button>
+    <script type="text/javascript">
+        function myBtn(){
+            alert("Hello World!");
+        }
+    </script>
+	<button type="button" id="myBtn">按钮2</button>
+    <script>
+        function sayHello() {
+            alert('Hello World again!');
+        }
+        document.getElementById("myBtn").onclick = sayHello;
+    </script>
+	<br>
+	<button type="button" onmouseover="console.log('您的鼠标已经移动到了该按钮上');">请将鼠标移动至此处</button><br>
+    <a href="#" onmouseover="myEvent()">请将鼠标移动至此处</a>
+    <script>
+        function myEvent() {
+            console.log('您的鼠标已经移动到了该链接上');
+        }
+	 </script>
+	 <div style="width: 350px; height: 200px; border:1px solid black" id="myBox"></div>
+    <script>
+        function myEvent1() {
+            console.log('您的鼠标已经离开指定元素');
+        }
+        document.getElementById("myBox").onmouseout = myEvent1;
+    </script>
+	<input type="text" onkeydown="myEvent2()">
+    <script>
+        function myEvent2() {
+            console.log("您按下了键盘上的某个按钮"); //输入的效果没有了，用alert就可以
+        }
+    </script>
+	 <input type="text" onkeyup="myEvent()">
+    <script>
+        function myEvent() {
+            console.log("您按下了键盘上的某个按钮，并将其释放了"); //会弹出两次
+        }
+    </script>
+	<br>
+	<script>
+		var str = "JavaScript";
+		document.write('str = ' + str + '<br>');                    // 输出：JavaScript
+		document.writeln('window.str = ' + window.str + '<br>');             // 输出：JavaScript
+		document.writeln('equal: ' + (str === window.str) + '<br>');     // 输出：true
+		function myFun(){
+			var str1 = "Hello World!";
+			document.write(str1);    // 输出：Hello World!
+		}
+		//document.write(str1);        // 报错：str is not defined
+		
+	</script>
+	<p>Object related content</p>
+	<script>
+		var person = {
+			name: "Peter",
+			age: 28,
+			gender: "Male",
+			display: function() {
+				document.write(this.name + " " + this.age + " " + this.gender);
+			},
+			displayName: function() {
+				document.write(this.name);
+			},
+			displayName1: function() {
+				return this.name;
+			}
+		}
+		document.write("姓名：" + person.name + "<br>");   // 输出：姓名：Peter
+		document.write("年龄：" + person["age"] + "<br>");          // 输出：年龄：28
+		document.write("invoke person.display(): ");
+		document.write(person.display() + "<br>"); 
+		//Peter 28 Maleundefined
+		document.write("invoke person.display: ");
+		document.write(person.display + "<br>"); 
+		//function() { document.write(this.name + " " + this.age + " " + this.gender); }
+		document.write("invoke person['displayName'](): ");
+		document.write(person['displayName']() + "<br>"); 
+		//Peterundefined		
+		document.write("invoke person['displayName1'](): "+ person['displayName1']() + "<br>"); //Peter
+		
+		var person1 = {
+			name: "Peter",
+			age: 28,
+			gender: "Male",
+			displayName: function() {
+				document.write(this.name + " " + this.age + " " + this.gender);
+			}
+		};
+		person1.phone = "15012345678";
+		person1.age = 20;
+		person1["name"] = "Peter Parker";
+		for (var key in person1) {
+			document.write(key + "：" + person1[key] + "<br>")
+		}
+		
+		delete person.gender;
+		delete person['phone'];
+		document.write("after delete...<br>") //其实delete没有生效
+		for (var key in person1) {
+			document.write(key + "：" + person1[key] + "<br>")
+		}
+	</script>
+</body>
+</html>

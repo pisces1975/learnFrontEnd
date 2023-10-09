@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+        div {
+            width: 650px;
+            max-height: 350px;
+			min-height: 10px;
+            margin-top: 20px;
+            border: 1px solid grey;
+        }
+        div.hidden {
+            overflow: hidden;
+        }
+        div.scroll {
+            /* overflow-y: scroll; */
+			overflow-y: auto;
+        }
+        div.auto {
+            overflow: auto;
+        }
+    </style>
+    <title>Learn front end techs</title>
+	<meta charset="UTF-8"/>
+</head>
+<body onload="accesskey()" >
+	<h3>DOM</h3>
+	<div style='color:blue' class='scroll' id='div1'> 
+		<p  onclick='clickfun()'>Content in div1</p>
+		<script>			
+			function clickfun() {
+				console.log("clickfun() starts...");
+				var element = document.getElementById('div1');				
+				div1.innerHTML = document.activeElement;
+				var box = document.createElement('div');
+				div1.appendChild(box);
+				var att = document.createAttribute('id');
+				att.value = "myDiv";
+				document.getElementsByTagName('div')[1].setAttributeNode(att);
+				var att1 = document.createAttribute('style');
+				att1.value='color:green';
+				document.getElementsByTagName('div')[1].setAttributeNode(att1);
+				document.getElementById("myDiv").innerHTML = Math.random();
+				
+				var btn = document.createElement("button");
+				var t = document.createTextNode("按钮");
+				btn.appendChild(t);
+				div1.appendChild(btn);
+				var att = document.createAttribute('onclick');
+				att.value = "myfunction()";
+				document.getElementsByTagName('button')[0].setAttributeNode(att);
+			}
+			
+			function myfunction(){
+				alert(document.title);
+			}
+		</script>
+	</div>
+	<h3>Element</h3>
+	<div class='scroll' id='div2'>
+		<a id="r" class="aaa bbb ccc" href="javascript:;">使用 Alt + r 访问该元素</a><br>
+		<a id="g" href="javascript:;">使用 Alt + g 访问该元素</a>
+		<script type="text/javascript">
+			function accesskey(){
+				console.log("accesskey() starts...");
+				document.getElementById('r').accessKey="r"
+				document.getElementById('g').accessKey="g"
+			}
+			var ele = document.getElementById('r');
+			console.log(ele.attributes);                            // 输出：NamedNodeMap {0: id, 1: href, id: id, href: href, length: 2}
+			console.log(document.body.childNodes);                  // 输出：NodeList(7) [text, a#r, br, text, a#g, text, script]
+			console.log(ele.classList);                             // 输出：DOMTokenList(3) ["aaa", "bbb", "ccc", value: "aaa bbb ccc"]
+			console.log(ele.className);                             // 输出：aaa bbb ccc
+			console.log(ele.clientHeight);                          // 输出：0
+			console.log(ele.tagName);                               // 输出：A
+			console.log(ele.compareDocumentPosition(document.getElementById('g')));     // 输出：4
+			console.log(ele.getAttribute('href'));                  // 输出：javascript:;
+			console.log(ele.getAttributeNode('href'));              // 输出：href="javascript:;"
+		</script>
+	</div>
+	<h3>Attributes</h3>
+	<div class='scroll' id='div3'>
+		<a href="javascript:;" target="_blank" id="myLink">JavaScript</a><br>
+		<script type="text/javascript">
+			var atag = document.getElementById('myLink');
+			var attr = atag.attributes;
+			document.write(attr.target.value + "<br>");                 // 输出：_blank
+			document.write(attr.target.name + "<br>");                  // 输出：target
+			document.write(attr.id.value + "<br>");                 // 输出：_blank
+			document.write(attr.id.name + "<br>");                  // 输出：target
+			document.write(attr.target.specified + "<br>");             // 输出：true
+			document.write(attr.getNamedItem('href').textContent + "<br>");  // 输出：javascript:;
+			document.write(attr.item(0).name + "<br>");                 // 输出：href
+			document.write(attr.length + "<br>");                       // 输出：3
+			document.write(attr.removeNamedItem('target') + "<br>");    // 输出：[object Attr]
+			var cla = document.createAttribute('class');
+			cla.value = 'democlass';
+			document.write(attr.setNamedItem(cla) + "<br>");            // 输出：null
+		</script>
+	</div>
+	<h3>BOM</h3>
+	<div class='scroll' id='div4' style='color:brown'>
+		<script type="text/javascript">
+			window.defaultStatus = "JavaScript"
+			document.write(window.defaultStatus + "<br>");    // 输出：JavaScript
+			document.write(window.innerHeight + "<br>");      // 输出：314
+			document.write(window.innerWidth + "<br>");       // 输出：539
+			document.write(window.length + "<br>");           // 输出：0
+			document.write(window.location + "<br>");         // 输出：file:///F:/code/index.html
+			document.write(window.opener + "<br>");           // 输出：null
+			document.write(window.outerHeight + "<br>");      // 输出：558
+			document.write(window.outerWidth + "<br>");       // 输出：555
+			document.write(window.parent + "<br>");           // 输出：[object Window]
+			document.write(window.screenLeft + "<br>");       // 输出：2263
+			document.write(window.screenTop + "<br>");        // 输出：401
+			document.write(window.screenX + "<br>");          // 输出：2263
+			document.write(window.screenY + "<br>");          // 输出：401
+		</script>
+		<p id="show_tag">此处显示点击按钮的效果</p>
+		<button onclick="myBtoa()">btoa()</button>
+		<button onclick="myAtob()">atob()</button>
+		<button onclick="myAlert()">alert()</button>
+		<button onclick="myConfirm()">confirm()</button>
+		<button onclick="myOpen()">open()</button>
+		<button onclick="myMoveBy()">moveBy()</button>
+		<button onclick="myMoveTo()">moveTo()</button>
+		<button onclick="myPrint()">print()</button>
+		<button onclick="myPrompt()">prompt()</button>
+		<button onclick="myResizeBy()">resizeBy()</button>
+		<button onclick="myClose()">close()</button>
+		<script type="text/javascript">
+			var ptag = document.getElementById('show_tag');
+			var str;
+			function myBtoa(){
+				str = btoa("JavaScript");
+				ptag.innerHTML = str;
+			}
+			function myAtob(){
+				ptag.innerHTML = typeof str;
+				if(str == undefined){
+					ptag.innerHTML = "请先点击 btoa() 按钮";
+					return;
+				}
+				ptag.innerHTML = atob(str);
+			}
+			function myAlert(){
+				alert("这是一个提示框！");
+			}
+			function myConfirm(){
+				var x;
+				var r = confirm("按下按钮!");
+				if (r == true){
+					x = "你按下了\"确定\"按钮!";
+				}
+				else{
+					x = "你按下了\"取消\"按钮!";
+				}
+				ptag.innerHTML = x;
+			}
+			var myWin;
+			function myOpen(){
+				if(myWin == undefined || (myWin != undefined && myWin.closed == true)){
+					myWin = window.open('', '', 'width=200,height=100');
+				}else{
+					return;
+				}
+			}
+			function myMoveBy(){
+				if(myWin == undefined || myWin.closed == true) myOpen();
+				myWin.moveBy(200, 200);
+			}
+			function myMoveTo(){
+				if(myWin == undefined || myWin.closed == true) myOpen();
+				myWin.moveTo(0, 0);
+			}
+			function myPrint(){
+				print();
+			}
+			function myPrompt(){
+				var name = prompt("请输入你的名字。")
+				if (name != null && name != ""){
+					ptag.innerHTML = "你好 " + name  + "! 今天感觉如何?";
+				} else {
+					ptag.innerHTML = "你没有输入任何内容";
+				}
+			}
+			function myResizeBy(){
+				if(myWin == undefined || myWin.closed == true) myOpen();
+				myWin.resizeBy(100, 100);
+			}
+			function myClose(){
+				if(myWin == undefined) return;
+				if(myWin != undefined && myWin.closed == false) myWin.close();
+			}
+		</script>
+	</div>
+	<h3>Navigator</h3>
+	<div class='scroll' id='div5' style='color:darkgreen'>
+		<script>
+			document.write("navigator.appCodeName：" + navigator.appCodeName + "<br>");
+			document.write("navigator.appName：" + navigator.appName + "<br>");
+			document.write("navigator.appVersion：" + navigator.appVersion + "<br>");
+			document.write("navigator.cookieEnabled：" + navigator.cookieEnabled + "<br>");
+			document.write("navigator.onLine：" + navigator.onLine + "<br>");
+			document.write("navigator.platform：" + navigator.platform + "<br>");
+			document.write("navigator.userAgent：" + navigator.userAgent + "<br>");
+			document.write("navigator.javaEnabled()：" + navigator.javaEnabled() + "<br>");
+		</script>
+	</div>
+	<h3>Screen</h3>
+	<div class='scroll' id='div6' style='color:darkgreen'>
+	
+		<script>
+			document.write(screen.availTop + "<br>");   // 输出：0
+			document.write(screen.availLeft + "<br>");  // 输出：0
+			document.write(screen.availHeight + "<br>");// 输出：1050
+			document.write(screen.availWidth + "<br>"); // 输出：1920
+			document.write(screen.height + "<br>");     // 输出：1080
+			document.write(screen.width + "<br>");      // 输出：1920
+			document.write(screen.colorDepth + "<br>"); // 输出：24
+			document.write(screen.pixelDepth + "<br>"); // 输出：24
+			console.log(screen.orientation);            // 输出：ScreenOrientation {angle: 0, type: "landscape-primary", onchange: null}
+		</script>
+		<button type="button" onclick="getResolution();">获取屏幕的宽度和高度</button>
+		<script type="text/javascript">
+			function getResolution() {
+				alert("您计算机屏幕的尺寸为：" + screen.width + "x" + screen.height);
+			}
+		</script>
+		<button type="button" onclick="getColorDepth();">获取颜色深度</button>
+		<script type="text/javascript">
+			function getColorDepth() {
+				alert("您计算机屏幕的颜色深度为：" + screen.colorDepth);
+			}
+		</script>
+	</div>
+	<h3>Location</h3>
+	<div class='scroll' id='div7' style='color:orange'>
+		<a href="http://c.biancheng.net:8080/javascript/location-objcet.html?course=javascript&title=location#content" id="url">first URL</a><br>
+		<script type="text/javascript">
+			var url = document.getElementById('url');
+			document.write("<b>hash：</b>" + url.hash + "<br>");
+			document.write("<b>host：</b>" + url.host + "<br>");
+			document.write("<b>hostname：</b>" + url.hostname + "<br>");
+			document.write("<b>href：</b>" + url.href + "<br>");
+			document.write("<b>pathname：</b>" + url.pathname + "<br>");
+			document.write("<b>port：</b>" + url.port + "<br>");
+			document.write("<b>protocol：</b>" + url.protocol + "<br>");
+			document.write("<b>search：</b>" + url.search + "<br>");
+		</script>
+		<a href="http://c.biancheng.net:8080/javascript/location-objcet.html?course=javascript&title=location#content" id="url2">second URL</a><br>
+		<button onclick="myAssign()">assign()</button>
+		<button onclick="myReload()">reload()</button>
+		<button onclick="myReplace()">replace()</button>
+		<button onclick="myToString()">toString()</button>
+		<script type="text/javascript">
+			var url = 'http://c.biancheng.net';
+			function myAssign(){
+				location.assign(url);
+			}
+			function myReload(){
+				location.reload();
+			}
+			function myReplace(){
+				location.replace(url);
+			}
+			function myToString(){
+				var url = document.getElementById('url');
+				var str = url.toString();
+				alert(str);
+			}
+		</script>
+	</div>
+	<h3>History</h3>
+	<div class='scroll' id='div8' style='color:purple'>
+		<script type="text/javascript">
+			document.write(history.length + "<br>");
+			document.write(history.scrollRestoration + "<br>");
+			document.write(history.state + "<br>");
+		</script>
+		<br>
+		<button onclick="myBack()">back()</button>
+		<button onclick="myForward()">forward()</button>
+		<button onclick="myGo()">go()</button>
+		<button onclick="myPushState()">pushState()</button>
+		<button onclick="myReplaceState()">replaceState()</button>
+		<script type="text/javascript">
+			function myBack(){
+				history.back();
+			}
+			function myForward(){
+				history.forward();
+			}
+			function myGo(){
+				var num = prompt('请输入一个整数', '1');
+				history.go(num);
+			}
+			function myPushState(){
+				var state = { 'page_id': 1, 'user_id': 5 }
+				var title = 'JavaScript'
+				var url = 'index.html'
+				history.pushState(state, title, url)
+				console.log(history.state);
+			}
+			function myReplaceState(){
+				var state = { 'page_id': 3, 'user_id': 5 }
+				var title = 'history'
+				var url = 'index.html'
+				history.replaceState(state, title, url)
+				console.log(history.state);
+			}
+		</script>
+	</div>
+</body>
+</html>

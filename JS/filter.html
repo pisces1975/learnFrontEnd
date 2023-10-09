@@ -56,6 +56,7 @@
             filter: blur(2px) contrast(50%) brightness(80%);
         }
     </style>
+	<meta charset="UTF-8"/>
 </head>
 <body>
     <div><img src="./flower.webp" alt="tulip">                   <span>原始图像</span></div>
@@ -70,6 +71,28 @@
     <div><img class="sepia" src="./flower.webp" alt="tulip">     <span>sepia(100%)</span></div>
     <div><img class="shadow" src="./flower.webp" alt="tulip">    <span>drop-shadow(8px 8px 10px green)</span></div>
 	<div><img class="combine" src="./flower.webp" alt="tulip">    <span>sepia(90%) saturate(400%) brightness(150%)</span></div>
-	 <div class='a'>说起滤镜可能大家首先想到的就是 PhotoShop 之类的制图软件，通过此类软件的滤镜可以对图片进行美化。而在 CSS 中，我们无需借助任何软件也可以实现很多种滤镜效果，例如模糊效果、透明效果、色彩反差调整、色彩反相等等。另外，通过 CSS 中的滤镜还能对网页中的元素或者视频进行处理。</div>
+	<div class='a'>说起滤镜可能大家首先想到的就是 PhotoShop 之类的制图软件，通过此类软件的滤镜可以对图片进行美化。而在 CSS 中，我们无需借助任何软件也可以实现很多种滤镜效果，例如模糊效果、透明效果、色彩反差调整、色彩反相等等。另外，通过 CSS 中的滤镜还能对网页中的元素或者视频进行处理。
+	</div>
+	<div id="result">wait for response</div>
+    <button type="button" onclick="displayFullName()">点击发送请求</button>
+    <script>
+        function displayFullName() {
+            // 创建 XMLHttpRequest 对象
+            var request = new XMLHttpRequest();
+            // 实例化请求对象
+            request.open("GET", "http://127.0.0.1:5000/ping");
+            // 监听 readyState 的变化
+            request.onreadystatechange = function() {
+				console.log('get response...');
+                // 检查请求是否成功
+                if(this.readyState === 4 && this.status === 200) {
+                    // 将来自服务器的响应插入当前页面
+                    document.getElementById("result").innerHTML = this.responseText;
+                }
+            };
+            // 将请求发送到服务器
+            request.send();
+        }
+    </script>
 </body>
 </html>
